@@ -4,6 +4,9 @@
 
 package com.mycompany.proyectolenguajesbasesdatos;
 
+import panaderia.conexion.ConexionSQL;
+import java.sql.Connection;
+
 /**
  *
  * @author fidelitas
@@ -11,6 +14,11 @@ package com.mycompany.proyectolenguajesbasesdatos;
 public class ProyectoLenguajesBasesDatos {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Connection conn = ConexionSQL.conectar();
+        if (conn != null) {
+            System.out.println("🎉 ¡Todo listo para comenzar!");
+        } else {
+            System.out.println("⚠️ No se pudo conectar.");
+        }
     }
 }
