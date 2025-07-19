@@ -4,7 +4,7 @@
 
 package com.mycompany.proyectolenguajesbasesdatos;
 
-import panaderia.conexion.ConexionSQL;
+import panaderia.conexion.ConexionOracle;
 import java.sql.Connection;
 
 /**
@@ -14,11 +14,11 @@ import java.sql.Connection;
 public class ProyectoLenguajesBasesDatos {
 
     public static void main(String[] args) {
-        Connection conn = ConexionSQL.conectar();
+        Connection conn = ConexionOracle.obtenerConexion();
         if (conn != null) {
-            System.out.println("🎉 ¡Todo listo para comenzar!");
+            System.out.println("¡Todo listo para comenzar!");
         } else {
-            System.out.println("⚠️ No se pudo conectar.");
+            System.out.println("No se pudo conectar.");
         }
     }
 }
